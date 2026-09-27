@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group_modules" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_menu"
+            android:title="Dashboard Overview" />
+
+        <item
+            android:id="@+id/nav_inventory"
+            android:icon="@drawable/ic_refresh"
+            android:title="Inventory Management" />
+
+        <item
+            android:id="@+id/nav_pos"
+            android:icon="@drawable/ic_add"
+            android:title="Mobile Point of Sale (POS)" />
+
+        <item
+            android:id="@+id/nav_sales"
+            android:icon="@drawable/ic_trending_up"
+            android:title="Sales &amp; Invoices" />
+
+        <item
+            android:id="@+id/nav_contractors"
+            android:icon="@drawable/ic_person"
+            android:title="Contractors CRM" />
+
+        <item
+            android:id="@+id/nav_suppliers"
+            android:icon="@drawable/ic_person"
+            android:title="Suppliers CRM" />
+
+        <item
+            android:id="@+id/nav_logistics"
+            android:icon="@drawable/ic_trending_up"
+            android:title="Fleet &amp; Logistics" />
+
+        <item
+            android:id="@+id/nav_hr"
+            android:icon="@drawable/ic_person"
+            android:title="Staff &amp; HR" />
+
+        <item
+            android:id="@+id/nav_reports"
+            android:icon="@drawable/ic_trending_up"
+            android:title="Financials &amp; P&amp;L" />
+
+        <item
+            android:id="@+id/nav_logs"
+            android:icon="@drawable/ic_warning"
+            android:title="Audit Logs" />
+    </group>
+
+    <item android:title="Account">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_lock"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

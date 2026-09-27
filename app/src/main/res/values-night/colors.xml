@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Semantic Dark Theme Colors -->
+    <color name="app_bg">#0F172A</color>
+    <color name="card_bg">#1E293B</color>
+    <color name="card_stroke">#334155</color>
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#CBD5E1</color>
+    <color name="text_muted">#94A3B8</color>
+
+    <!-- Input Typing Field Colors (Dark Mode) -->
+    <color name="input_bg">#1E293B</color>
+    <color name="input_stroke">#475569</color>
+    <color name="input_text">#F8FAFC</color>
+    <color name="input_hint">#94A3B8</color>
+
+    <!-- Dialog Colors (Dark Mode) -->
+    <color name="dialog_bg">#1E293B</color>
+    <color name="dialog_meta_bg">#0F172A</color>
+
+    <color name="tap_hint">#38BDF8</color>
+</resources>
