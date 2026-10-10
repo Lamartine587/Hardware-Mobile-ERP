@@ -26,6 +26,7 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var navigationView: NavigationView
     private lateinit var btnNavMenu: MaterialButton
     private lateinit var btnRefresh: MaterialButton
+    private lateinit var btnThemeToggle: MaterialButton
 
     private lateinit var tvUserGreeting: TextView
     private lateinit var tvUserRoleSubtitle: TextView
@@ -74,6 +75,7 @@ class DashboardActivity : AppCompatActivity() {
         navigationView = findViewById(R.id.navigationView)
         btnNavMenu = findViewById(R.id.btnNavMenu)
         btnRefresh = findViewById(R.id.btnRefresh)
+        btnThemeToggle = findViewById(R.id.btnThemeToggle)
 
         tvUserGreeting = findViewById(R.id.tvUserGreeting)
         tvUserRoleSubtitle = findViewById(R.id.tvUserRoleSubtitle)
@@ -185,6 +187,15 @@ class DashboardActivity : AppCompatActivity() {
         btnRefresh.setOnClickListener {
             Toast.makeText(this, "Refreshing ERP dashboard data...", Toast.LENGTH_SHORT).show()
             loadDashboardData()
+        }
+
+        btnThemeToggle.setOnClickListener {
+            val isNightMode = (resources.configuration.uiMode and android.content.res.Configuration.UI_MODE_NIGHT_MASK) == android.content.res.Configuration.UI_MODE_NIGHT_YES
+            if (isNightMode) {
+                androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO)
+            } else {
+                androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES)
+            }
         }
 
         // Quick Action Shortcuts

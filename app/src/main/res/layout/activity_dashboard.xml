@@ -7,76 +7,95 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <!-- MAIN DASHBOARD CONTENT AREA -->
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?android:attr/colorBackground"
-        android:orientation="vertical">
+        android:background="?android:attr/colorBackground">
 
-        <!-- TOP BAR WITH TOP NAVIGATION BUTTON (OPENS AND CLOSES ON CLICK) -->
-        <LinearLayout
-            android:id="@+id/topBar"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:elevation="6dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="12dp"
-            android:paddingTop="12dp"
-            android:paddingEnd="12dp"
-            android:paddingBottom="12dp">
+            app:elevation="6dp">
 
-            <!-- TOP NAVIGATION BUTTON THAT OPENS / CLOSES ON CLICK -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnNavMenu"
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-                android:layout_width="wrap_content"
+            <!-- TOP BAR WITH TOP NAVIGATION BUTTON (OPENS AND CLOSES ON CLICK) -->
+            <LinearLayout
+                android:id="@+id/topBar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minWidth="0dp"
-                android:paddingStart="8dp"
+                android:background="?attr/colorPrimary"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingTop="12dp"
                 android:paddingEnd="12dp"
-                android:text="Navigation"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:icon="@drawable/ic_menu"
-                app:iconPadding="6dp"
-                app:iconTint="@android:color/white"
-                app:rippleColor="#40FFFFFF" />
+                android:paddingBottom="12dp"
+                app:layout_scrollFlags="scroll|enterAlways">
 
-            <TextView
-                android:id="@+id/tvHeaderTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Hardware ERP"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                <!-- TOP NAVIGATION BUTTON THAT OPENS / CLOSES ON CLICK -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNavMenu"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="12dp"
+                    android:text="Navigation"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_menu"
+                    app:iconPadding="6dp"
+                    app:iconTint="@android:color/white"
+                    app:rippleColor="#40FFFFFF" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnRefresh"
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:minWidth="0dp"
-                android:padding="0dp"
-                app:icon="@drawable/ic_refresh"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:iconTint="@android:color/white"
-                app:rippleColor="#40FFFFFF" />
+                <TextView
+                    android:id="@+id/tvHeaderTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Hardware ERP"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        </LinearLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnThemeToggle"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:minWidth="0dp"
+                    android:padding="0dp"
+                    app:icon="@drawable/ic_theme"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconTint="@android:color/white"
+                    app:rippleColor="#40FFFFFF" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRefresh"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:minWidth="0dp"
+                    android:padding="0dp"
+                    app:icon="@drawable/ic_refresh"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconTint="@android:color/white"
+                    app:rippleColor="#40FFFFFF" />
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <!-- DASHBOARD BODY CONTENT -->
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fillViewport="true">
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -580,8 +599,9 @@
                 </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <!-- TOP-ENABLED NAVIGATION DRAWER (SLIDES FROM LEFT OR TOGGLED BY TOP NAV BUTTON) -->
     <com.google.android.material.navigation.NavigationView
